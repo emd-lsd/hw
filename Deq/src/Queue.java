@@ -42,8 +42,8 @@ class Queue {
     }
 
     //Удалить число из начала очереди.
-    public int pop() throws Exception {
-        int val = front();
+    public char pop() throws Exception {
+        char val = front();
         head = forward(head);
         size -= 1;
 
