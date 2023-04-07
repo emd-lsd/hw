@@ -12,6 +12,10 @@ public class Main {
         int i=0;
         boolean f = true;
         while(i<=d.getSize()/2){
+            if (d.getSize()==1) {
+                f = false;
+                break;
+            }
             if(d.popFront()!=d.popBack()) f = false;
             i++;
         }
