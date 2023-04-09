@@ -1,0 +1,6 @@
+Run M F
+Run I J
+Alt+Tab
+Run U M
+Alt+Tab+Tab
+Alt+Tab+Tab+Tab
