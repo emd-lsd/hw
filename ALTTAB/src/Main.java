@@ -44,6 +44,11 @@ public class Main {
                         list.insert(act);
 
                     }
+                    else {
+                        list.toFront();
+                        list.erase();
+                        System.out.println(list.after());
+                    }
                 }
             }
         }

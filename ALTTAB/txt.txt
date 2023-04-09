@@ -4,3 +4,4 @@ Alt+Tab
 Run U M
 Alt+Tab+Tab
 Alt+Tab+Tab+Tab
+Alt+Delete
