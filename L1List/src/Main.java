@@ -11,7 +11,7 @@ public class Main {
 	list.insert(4);
 	list.insert(5);
 	int i = 0;
-	int var = 15;
+	int var = 8;
 	while(i<var) {
 		try {
 			System.out.println(list.after());
