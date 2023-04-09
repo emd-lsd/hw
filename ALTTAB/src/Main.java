@@ -11,13 +11,13 @@ public class Main {
         int n = 0;
         while(in.hasNextLine()){
             String s = in.nextLine();
-            String [] data; String [] pr; int k = 0;
+            String [] data; String [] pr; int k;
             if(!s.equals("")){
                 data = s.split(" ");
                 if (Objects.equals(data[0],"Run")){
                     int j=1; String ss = "";
                     while (j < data.length){
-                        ss += data[j]; // ss - сборка названия приложения в одну строку
+                        ss += " " + data[j]; // ss - сборка названия приложения в одну строку
                         j++;
                     }
                     list.insert(ss);
@@ -31,7 +31,7 @@ public class Main {
                         k = pr.length - 1; // к -  количество табов
                         int var = k % n + 1; // на каком месте находится действующее приложение
                         try {
-                            for (int b = 1; b < var; b++) {
+                            for (int b = 1; b < var; b++) { // двигаем указатель до нужного приложения
                                 list.forward();
                             }
                         }
@@ -39,9 +39,9 @@ public class Main {
                             list.toFront();
                         }
                         String act = list.erase();
-                        System.out.println(act);
+                        System.out.println(act); // выводим табнутое приложение
                         list.toFront();
-                        list.insert(act);
+                        list.insert(act); // вырезаем последнее выведенное приложение и вставляем последним в лист
 
                     }
                     else {
