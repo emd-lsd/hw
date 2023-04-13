@@ -44,7 +44,7 @@ public class Main {
                         list.insert(act); // вырезаем последнее выведенное приложение и вставляем последним в лист
 
                     }
-                    else {
+                    else { // Обработка команды Delete
                         list.toFront();
                         list.erase();
                         System.out.println(list.after());
