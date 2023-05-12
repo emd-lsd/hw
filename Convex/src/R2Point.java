@@ -1,12 +1,20 @@
+import java.io.FileWriter;
+import java.io.IOException;
 import java.util.Scanner;
 
 //Класс, описывающий точку (Point) на плоскости (R2).
-class R2Point{
+class R2Point extends Object{
     private double x, y;
+    protected static boolean f = false;
 
-    public R2Point(double x, double y){
+    public R2Point(double x, double y) throws IOException {
         this.x = x;
         this.y = y;
+        FileWriter fw = new FileWriter("Точки.txt",f);
+        fw.write(("x-> "+x+" y-> "+y));
+        fw.close();
+        f = true;
+
     }
 
     public R2Point() throws Exception{
@@ -15,6 +23,10 @@ class R2Point{
         x = in.nextDouble();
         System.out.print("y -> ");
         y = in.nextDouble();
+        FileWriter fw = new FileWriter("Точки.txt",f);
+        fw.write(("x-> "+x+" y-> "+y));
+        fw.close();
+        f = true;
     }
 
     public static double dist(R2Point a, R2Point b){
@@ -27,6 +39,13 @@ class R2Point{
 
     public static boolean equal(R2Point a, R2Point b){
         return a.x == b.x && a.y == b.y;
+
+    }
+
+    public boolean equals(Object a){
+        R2Point ob = (R2Point) a;
+        return x ==ob.x && y==ob.y;
+
     }
 
     public static boolean isTriangle(R2Point a, R2Point b, R2Point c){

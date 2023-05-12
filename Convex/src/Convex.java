@@ -1,8 +1,12 @@
 import java.awt.*;
+import java.io.FileWriter;
+import java.io.IOException;
 
 //Класс "Выпуклая оболочка".
 class Convex{
     private Figure fig;
+
+
 
     public Convex(){
         fig = new Void();
@@ -21,4 +25,8 @@ class Convex{
     }
 
     public void draw(Graphics2D g){fig.draw(g);}
+
+
+
+
 }

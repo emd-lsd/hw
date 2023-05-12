@@ -6,6 +6,7 @@ class Point implements Figure{
 
     public Point(R2Point p){
         this.p = p;
+
     }
 
     public double perimeter(){
@@ -17,7 +18,7 @@ class Point implements Figure{
     }
 
     public Figure add(R2Point q){
-        if(!R2Point.equal(p, q))
+        if(!p.equals(q))
             return new Segment(p, q);
         else
             return this;
@@ -25,5 +26,6 @@ class Point implements Figure{
     public void draw(Graphics2D g){
         g.fillOval((int) p.getX(), (int) p.getY(), 5, 5);
     }
+
 
 }
