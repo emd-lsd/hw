@@ -24,7 +24,7 @@ class R2Point extends Object{
         System.out.print("y -> ");
         y = in.nextDouble();
         FileWriter fw = new FileWriter("Точки.txt",f);
-        fw.write(("x-> "+x+" y-> "+y));
+        fw.write(("x-> "+x+" y-> "+y+"\n"));
         fw.close();
         f = true;
     }

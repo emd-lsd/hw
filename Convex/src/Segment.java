@@ -17,6 +17,13 @@ class Segment implements Figure{
         return 0.0;
     }
 
+    public int amount() {
+        int count = 0;
+        if((1<=Math.pow(p.getX(), 2)+Math.pow(p.getY(),2)) && (Math.pow(p.getX(), 2)+Math.pow(p.getY(),2)<=4)) count++;
+        if((1<=Math.pow(q.getX(), 2)+Math.pow(q.getY(),2)) && (Math.pow(q.getX(), 2)+Math.pow(q.getY(),2)<=4)) count++;
+        return count;
+    }
+
     public Figure add(R2Point r){
         if(R2Point.isTriangle(p, q, r))
             return new Polygon(p, q, r);

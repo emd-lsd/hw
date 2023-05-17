@@ -12,7 +12,7 @@ class ConvexTest{
             convex.add(point);
 
             w.repaint();
-            System.out.println("S = " + convex.area()+ ", P = " + convex.perimeter());
+            System.out.println("S = " + convex.area()+ ", P = " + convex.perimeter() + ", Amount of dots in the ring = " + convex.amount());
 
 
 

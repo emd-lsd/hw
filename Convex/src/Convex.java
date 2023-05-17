@@ -24,6 +24,8 @@ class Convex{
         return fig.perimeter();
     }
 
+    public int amount() {return fig.amount();}
+
     public void draw(Graphics2D g){fig.draw(g);}
 
 
