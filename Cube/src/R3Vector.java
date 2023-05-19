@@ -64,6 +64,10 @@ public class R3Vector {
         this.rotateZ(uz);
     }
 
+    public static R3Vector toR3Vector(R3Vector begin, R3Vector end){
+        return new R3Vector(end._x - begin._x, end._y - begin._y, end._z - begin._z);
+    }
+
     public static R3Vector vect(R3Vector a, R3Vector b){
         return new R3Vector(a._y*b._z - a._z*b._y,
                 a._z*b._x - a._x*b._z,
