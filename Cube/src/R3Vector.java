@@ -38,7 +38,7 @@ public class R3Vector {
         double cX = _x;
         double cY = _y;
         _x = cX*Math.cos(u) - cY*Math.sin(u);
-        _y =cY*Math.cos(u) - cX*Math.sin(u);
+        _y =cY*Math.cos(u) + cX*Math.sin(u);
 
     }
 

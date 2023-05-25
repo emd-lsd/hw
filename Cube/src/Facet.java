@@ -26,6 +26,18 @@ public class Facet {
         for(R3Vector v: _vertex ) v.rotate(ux, uy, uz);
     }
 
+    public R3Vector nearest(){
+        double max = _vertex[0].getZ();
+        R3Vector v = _vertex[0];
+        for(int i=0;i<4;i++){
+            if(_vertex[i].getZ()<max){
+                max = _vertex[i].getZ();
+                v = _vertex[i];
+            }
+        }
+        return v;
+    }
+
     public void draw(Graphics2D g){
         Path2D p = new Path2D.Double();
         p.moveTo(_vertex[0].getX(), _vertex[0].getY());
@@ -35,7 +47,9 @@ public class Facet {
         p.lineTo(_vertex[0].getX(), _vertex[0].getY());
         p.closePath();
 
+
         g.setColor(_color);
-        g.draw(p); //g.fill(p);
+        g.draw(p);
+        g.fill(p);
     }
 }
