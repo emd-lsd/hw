@@ -4,6 +4,7 @@ import java.util.Stack;
 
 public class Cube {
     private Facet[] _facets;
+
     ArrayList<Facet> arr = new ArrayList<>();
     public Cube() {
 

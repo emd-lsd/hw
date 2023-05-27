@@ -2,9 +2,12 @@ public class R3Vector {
     private double _x, _y, _z;
 
     public R3Vector(double x, double y, double z){
+
         _x = x;
         _y = y;
         _z = z;
+
+
     }
 
     public double getX() {
@@ -19,16 +22,25 @@ public class R3Vector {
         return _z;
     }
 
+    public void act () {
+        int c = -500;
+        double t = c/(_z+c);
+        _x = t*_x;
+        _y = t*_y;
+    }
+
     public void scale(double kx, double ky, double kz){
         _x *= kx;
         _y *= ky;
         _z *= kz;
+        this.act();
     }
 
     public void translate(double dx, double dy, double dz){
         _x += dx;
         _y += dy;
         _z += dz;
+        this.act();
     }
 
     private void rotateZ(double u){
@@ -62,6 +74,7 @@ public class R3Vector {
         this.rotateX(ux);
         this.rotateY(uy);
         this.rotateZ(uz);
+        this.act();
     }
 
     public static R3Vector toR3Vector(R3Vector begin, R3Vector end){

@@ -39,6 +39,7 @@ public class Facet {
     }
 
     public void draw(Graphics2D g){
+
         Path2D p = new Path2D.Double();
         p.moveTo(_vertex[0].getX(), _vertex[0].getY());
         p.lineTo(_vertex[1].getX(), _vertex[1].getY());
@@ -50,6 +51,9 @@ public class Facet {
 
         g.setColor(_color);
         g.draw(p);
-        g.fill(p);
+//        if (R3Vector.vect(R3Vector.toR3Vector(_vertex[1], _vertex[2]), R3Vector.toR3Vector(_vertex[2], _vertex[3])).getZ() > 0){
+//            g.fill(p);
+//        }
+        //g.fill(p);
     }
 }
