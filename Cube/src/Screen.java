@@ -28,7 +28,11 @@ public class Screen extends JFrame {
         d.drawLine(0, 0, _WIDTH/2, 0);
         d.drawLine(0,0,0,_HEIGHT/2);
         //d.fillOval(0,0,3,3);
-
         _cube.draw(d);
+    }
+
+    @Override
+    public void setContentPane(Container contentPane) {
+        super.setContentPane(contentPane);
     }
 }

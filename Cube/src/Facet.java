@@ -51,9 +51,9 @@ public class Facet {
 
         g.setColor(_color);
         g.draw(p);
-//        if (R3Vector.vect(R3Vector.toR3Vector(_vertex[1], _vertex[2]), R3Vector.toR3Vector(_vertex[2], _vertex[3])).getZ() > 0){
-//            g.fill(p);
-//        }
+        if (R3Vector.vect(R3Vector.toR3Vector(_vertex[1], _vertex[2]), R3Vector.toR3Vector(_vertex[2], _vertex[3])).getZ()-_vertex[2].getZ() > 0){
+            g.fill(p);
+        }
         //g.fill(p);
     }
 }

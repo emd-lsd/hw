@@ -23,7 +23,7 @@ public class R3Vector {
     }
 
     public void act () {
-        int c = -500;
+        int c = -100;
         double t = c/(_z+c);
         _x = t*_x;
         _y = t*_y;

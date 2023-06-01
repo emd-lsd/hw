@@ -4,7 +4,7 @@ public class Main {
         Cube cube = new Cube();
         cube.scale(50, 50, 50);
         //cube.translate(45,45,45);
-        cube.rotate(0,0,0);
+        cube.rotate(45,45,45);
         Screen screen = new Screen(cube);
     }
 }

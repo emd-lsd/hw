@@ -88,7 +88,7 @@ public class Cube {
     public void draw(Graphics2D g){
         for(int i = 0; i < _facets.length; i++)
             _facets[i].draw(g);
-        ft(_facets);
+        //ft(_facets);
         for(Facet f: arr){
             f.draw(g);
         }
