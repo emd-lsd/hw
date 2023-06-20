@@ -72,7 +72,7 @@ public class RecursCompf{
             compileV();
     }
     private void compileV(){
-        if(str[index] == '-' || str[index] == '+') System.out.print(str[index++]);
+        if(str[index] == '-' || str[index] == '+') System.out.print(str[index++]); // для унарных операций
         //System.out.print("" + str[index++]);
         while(index < str.length && String.valueOf(str[index]).matches("[0-9a-zA-Z]")) System.out.print(str[index++] + "");
         System.out.print(" ");
