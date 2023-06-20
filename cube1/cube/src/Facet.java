@@ -4,6 +4,7 @@ import java.awt.geom.Path2D;
 public class Facet {
     R3Vector[] _vertex;
     private Color _color;
+    private static boolean ff = false;
 
     public Facet(R3Vector v1, R3Vector v2, R3Vector v3, R3Vector v4){
         _vertex = new R3Vector[]{v1, v2, v3, v4};
@@ -30,16 +31,31 @@ public class Facet {
     }
 
     public void draw(Graphics2D g){
-        Path2D p = new Path2D.Double();
-        p.moveTo(_vertex[0].actual().getX(), _vertex[0].actual().getY());
-        p.lineTo(_vertex[1].actual().getX(), _vertex[1].actual().getY());
-        p.lineTo(_vertex[2].actual().getX(), _vertex[2].actual().getY());
-        p.lineTo(_vertex[3].actual().getX(), _vertex[3].actual().getY());
-        p.lineTo(_vertex[0].actual().getX(), _vertex[0].actual().getY());
-        p.closePath();
+        if(ff){
+            Path2D p = new Path2D.Double();
+            p.moveTo(_vertex[0].actual().getX(), _vertex[0].actual().getY());
+            p.lineTo(_vertex[1].actual().getX(), _vertex[1].actual().getY());
+            p.lineTo(_vertex[2].actual().getX(), _vertex[2].actual().getY());
+            p.lineTo(_vertex[3].actual().getX(), _vertex[3].actual().getY());
+            p.lineTo(_vertex[0].actual().getX(), _vertex[0].actual().getY());
+            p.closePath();
 
-        g.setColor(_color);
-        g.fill(p);
+            g.setColor(_color);
+            g.fill(p);
+        }
+        else{
+            Path2D p = new Path2D.Double();
+            p.moveTo(_vertex[0].getX(), _vertex[0].getY());
+            p.lineTo(_vertex[1].getX(), _vertex[1].getY());
+            p.lineTo(_vertex[2].getX(), _vertex[2].getY());
+            p.lineTo(_vertex[3].getX(), _vertex[3].getY());
+            p.lineTo(_vertex[0].getX(), _vertex[0].getY());
+            p.closePath();
+
+            g.setColor(_color);
+            g.fill(p);
+        }
+
         /*
 
         if (R3Vector.vect(R3Vector.toR3Vector(_vertex[0], _vertex[1]), R3Vector.toR3Vector(_vertex[1], _vertex[2])).getZ() > 0){
@@ -69,6 +85,11 @@ public class Facet {
             }
         }
         return new R3Vector(x, y, z);
+    }
+
+    public static void flag(){
+        if(ff) ff = false;
+        else ff = true;
     }
 
 }

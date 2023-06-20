@@ -6,6 +6,8 @@ import java.util.Observable;
 public class Cube extends Observable {
     private Facet[] _facets;
 
+
+
     ArrayList<Facet> nearT;
 
     public Cube(){
@@ -113,5 +115,9 @@ public class Cube extends Observable {
                 nearT.add(_facets[i]);
 
         }
+    }
+
+    public void flag(){
+        Facet.flag();
     }
 }

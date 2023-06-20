@@ -9,6 +9,7 @@ public class Controller {
     private TranslateX tx;
     private TranslateY ty;
     private TranslateZ tz;
+    private Flag fl;
     public Controller(MyPanel panel, Cube cube){
         this.cube = cube;
         this.panel = panel;
@@ -20,6 +21,7 @@ public class Controller {
         tx = new TranslateX(panel, cube);
         ty = new TranslateY(panel, cube);
         tz = new TranslateZ(panel, cube);
+        fl = new Flag(cube, panel);
     }
     public RotateX getRx(){ return rx;}
     public RotateY getRy(){ return ry;}
@@ -28,6 +30,7 @@ public class Controller {
     public TranslateX getTx(){ return tx;}
     public TranslateY getTy(){ return ty;}
     public TranslateZ getTz(){ return tz;}
+    public Flag getFl() { return fl;}
 
 
 

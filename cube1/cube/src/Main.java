@@ -37,6 +37,8 @@ public class Main {
 
         pane.add(controller.getTz());
 
+        pane.add(controller.getFl());
+
         pane.add(panel);
 
         cube.addObserver(controller.getRx());
@@ -46,5 +48,6 @@ public class Main {
         cube.addObserver(controller.getTx());
         cube.addObserver(controller.getTy());
         cube.addObserver(controller.getTz());
+        cube.addObserver(controller.getFl());
     }
 }
