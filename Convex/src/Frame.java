@@ -17,14 +17,19 @@ public class Frame extends JFrame {
 
     public void paint(Graphics g){
         Graphics2D d = (Graphics2D) g;
+
         super.paint(d);
+        d.scale(3,3);
         d.setColor(Color.black);
         d.translate(WIDTH/2, HEIGHT/2);
         d.drawLine(0, HEIGHT, 0, -HEIGHT);
         d.drawLine(WIDTH,0,-WIDTH,0);
         d.setColor(Color.MAGENTA);
         convex.draw(d);
-
+        d.setColor(Color.GREEN);
+        d.drawOval(-10,-10,20,20);
+        d.drawOval(-20,-20,40,40);
+        //d.fillOval();
 
     }
 }

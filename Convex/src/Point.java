@@ -19,7 +19,7 @@ class Point implements Figure{
 
     public int amount(){
         int count = 0;
-        if((1<=Math.pow(p.getX(), 2)+Math.pow(p.getY(),2)) && (Math.pow(p.getX(), 2)+Math.pow(p.getY(),2)<=4)) count++;
+        if((100<=Math.pow(p.getX(), 2)+Math.pow(p.getY(),2)) && (Math.pow(p.getX(), 2)+Math.pow(p.getY(),2)<=400)) count++;
         return count;
     }
 
@@ -31,6 +31,7 @@ class Point implements Figure{
     }
     public void draw(Graphics2D g){
         g.fillOval((int) p.getX(), (int) p.getY(), 5, 5);
+
     }
 
 

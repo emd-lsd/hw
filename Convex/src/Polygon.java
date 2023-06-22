@@ -28,9 +28,9 @@ class Polygon extends ArrayDeque implements Figure{
         p = R2Point.dist(a, b) + R2Point.dist(b, c)+ R2Point.dist(c, a);
         s = Math.abs(R2Point.area(a, b, c));
         am=0;
-        if((1<=Math.pow(a.getX(), 2)+Math.pow(a.getY(),2)) && (Math.pow(a.getX(), 2)+Math.pow(a.getY(),2)<=4)) am++;
-        if((1<=Math.pow(b.getX(), 2)+Math.pow(b.getY(),2)) && (Math.pow(b.getX(), 2)+Math.pow(b.getY(),2)<=4)) am++;
-        if((1<=Math.pow(c.getX(), 2)+Math.pow(c.getY(),2)) && (Math.pow(c.getX(), 2)+Math.pow(c.getY(),2)<=4)) am++;
+        if((100<=Math.pow(a.getX(), 2)+Math.pow(a.getY(),2)) && (Math.pow(a.getX(), 2)+Math.pow(a.getY(),2)<=400)) am++;
+        if((100<=Math.pow(b.getX(), 2)+Math.pow(b.getY(),2)) && (Math.pow(b.getX(), 2)+Math.pow(b.getY(),2)<=400)) am++;
+        if((100<=Math.pow(c.getX(), 2)+Math.pow(c.getY(),2)) && (Math.pow(c.getX(), 2)+Math.pow(c.getY(),2)<=400)) am++;
     }
 
     public double perimeter(){
@@ -65,21 +65,21 @@ class Polygon extends ArrayDeque implements Figure{
             //Удаляем все освещенные ребра из начала дека.
             for(x = (R2Point) removeFirst(); t.light(x, (R2Point) getFirst()); x = (R2Point) removeFirst()) {
                 grow(x, (R2Point) getFirst(), t);
-                if((1<=Math.pow(x.getX(), 2)+Math.pow(x.getY(),2)) && (Math.pow(x.getX(), 2)+Math.pow(x.getY(),2)<=4)) am--;
+                if((100<=Math.pow(x.getX(), 2)+Math.pow(x.getY(),2)) && (Math.pow(x.getX(), 2)+Math.pow(x.getY(),2)<=400)) am--;
             }
             addFirst(x);
 
             //Удаляем все освещенные ребра из конца дека.
             for (x = (R2Point) removeLast(); t.light((R2Point) getLast(), x); x = (R2Point)removeLast()) {
                 grow((R2Point) getLast(), x, t);
-                if((1<=Math.pow(x.getX(), 2)+Math.pow(x.getY(),2)) && (Math.pow(x.getX(), 2)+Math.pow(x.getY(),2)<=4)) am--;
+                if((100<=Math.pow(x.getX(), 2)+Math.pow(x.getY(),2)) && (Math.pow(x.getX(), 2)+Math.pow(x.getY(),2)<=400)) am--;
             }
             addLast(x);
 
             //Завершаем обработку добавляемой точки.
             p += R2Point.dist((R2Point)getLast(), t) + R2Point.dist(t, (R2Point)getFirst());
             addFirst(t);
-            if((1<=Math.pow(t.getX(), 2)+Math.pow(t.getY(),2)) && (Math.pow(t.getX(), 2)+Math.pow(t.getY(),2)<=4)) am++;
+            if((100<=Math.pow(t.getX(), 2)+Math.pow(t.getY(),2)) && (Math.pow(t.getX(), 2)+Math.pow(t.getY(),2)<=400)) am++;
         }
 
         return this;
