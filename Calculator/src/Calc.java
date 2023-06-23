@@ -1,11 +1,12 @@
 //Калькулятор арифметических формул.
 public class Calc extends Compf{
-    public StackInt s;
+    private StackInt s;
 
-	public Calc(){
+
+    public Calc(){
         s = new StackInt();
     }
-	
+
     private static int char2int(char c){
         return(int)c - (int)'0';
     }
@@ -36,11 +37,12 @@ public class Calc extends Compf{
             case '*':
                 s.push(s.pop()*second);
                 break;
-            case'/':
+            case '/':
                 s.push(s.pop()/second);
                 break;
-            case'^':
-                s.push((int)Math.pow(s.pop(), second));
+            case '^':
+                s.push((int) Math.pow(s.pop(), second));
+                break;
             case '$':
                 s.push(second*(-1));
         }
@@ -49,12 +51,12 @@ public class Calc extends Compf{
     @Override
     protected void nextOther(char c){
         if(flag)
-            s.push(s.pop()*10 + char2int(c));
-	    else s.push(char2int(c));
+            s.push(s.pop()*10+char2int(c));
+        else s.push(char2int(c));
         //s.push(Character.getNumericValue(c));
     }
 
-	@Override
+    @Override
     public final void compile(char[] str){
         super.compile(str);
 
