@@ -91,15 +91,27 @@ public class Cube extends Observable {
             _facets[i].draw(g);
 
          */
-
-        for(int i = 0; i < nearT.size(); i++){
-            nearT.get(i).draw(g);
-        }
-        for(int i = 0; i<nearT.size(); i++){
-            if (R3Vector.vect(R3Vector.toR3Vector(nearT.get(i)._vertex[0], nearT.get(i)._vertex[1]), R3Vector.toR3Vector(nearT.get(i)._vertex[1], nearT.get(i)._vertex[2])).getZ() > 0){
+        if(Facet.ff){
+            for(int i = 0; i < nearT.size(); i++){
                 nearT.get(i).draw(g);
             }
+            for(int i = 0; i<nearT.size(); i++){
+                if (R3Vector.vect(R3Vector.toR3Vector(nearT.get(i)._vertex[0], nearT.get(i)._vertex[1]), R3Vector.toR3Vector(nearT.get(i)._vertex[1], nearT.get(i)._vertex[2])).actual().getZ() > 0){
+                    nearT.get(i).draw(g);
+                }
+            }
         }
+        else {
+            for(int i = 0; i < nearT.size(); i++){
+                nearT.get(i).draw(g);
+            }
+            for(int i = 0; i<nearT.size(); i++){
+                if (R3Vector.vect(R3Vector.toR3Vector(nearT.get(i)._vertex[0], nearT.get(i)._vertex[1]), R3Vector.toR3Vector(nearT.get(i)._vertex[1], nearT.get(i)._vertex[2])).getZ() > 0){
+                    nearT.get(i).draw(g);
+                }
+            }
+        }
+
 
 
     }

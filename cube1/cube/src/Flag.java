@@ -33,6 +33,7 @@ public class Flag extends JButton implements Observer{
         public void actionPerformed(ActionEvent e){
             //cube.increment_rotatex();
             cube.flag();
+            panel.repaint();
         }
     }
 }

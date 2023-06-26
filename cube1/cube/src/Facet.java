@@ -4,7 +4,7 @@ import java.awt.geom.Path2D;
 public class Facet {
     R3Vector[] _vertex;
     private Color _color;
-    private static boolean ff = false;
+     static boolean ff = false;
 
     public Facet(R3Vector v1, R3Vector v2, R3Vector v3, R3Vector v4){
         _vertex = new R3Vector[]{v1, v2, v3, v4};
@@ -41,6 +41,9 @@ public class Facet {
             p.closePath();
 
             g.setColor(_color);
+            if (R3Vector.vect(R3Vector.toR3Vector(_vertex[0], _vertex[1]), R3Vector.toR3Vector(_vertex[1], _vertex[2])).actual().getZ() < 0){
+                g.fill(p);
+            }
             g.fill(p);
         }
         else{
